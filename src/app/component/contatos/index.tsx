@@ -1,3 +1,3 @@
 export default function ContatosComponent() {
-  return <div>Componente Contatos</div>;
+  return <div>Componente Contatos</div>
 }

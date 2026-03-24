@@ -1,3 +1,3 @@
 export default function HomComponent() {
-  return <div>Componente Hom</div>;
+  return <div>Componente Hom</div>
 }

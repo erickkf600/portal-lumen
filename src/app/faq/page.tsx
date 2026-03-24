@@ -4,5 +4,5 @@ export default function FaqPage() {
       <h1>FAQ</h1>
       <p>Perguntas frequentes.</p>
     </main>
-  );
+  )
 }

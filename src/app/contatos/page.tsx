@@ -4,5 +4,5 @@ export default function ContatosPage() {
       <h1>Contatos</h1>
       <p>Página de contatos.</p>
     </main>
-  );
+  )
 }

@@ -1,3 +1,3 @@
 export default function FaqComponent() {
-  return <div>Componente FAQ</div>;
+  return <div>Componente FAQ</div>
 }
