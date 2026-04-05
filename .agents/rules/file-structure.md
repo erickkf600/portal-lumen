@@ -157,6 +157,20 @@ Never use relative imports for shared components:
 ❌ ../../components/Header/Header
 
 
+Component Organization Pattern (Mandatory)
+
+Components MUST follow folder-based structure
+and MUST use index.tsx as the component entry file.
+
+Each component MUST be placed inside its own folder,
+and the main component file MUST always be named:
+
+index.tsx
+
+Examples: 
+
+ Header/
+    index.tsx
 
 Component Naming Rule:
 
@@ -168,3 +182,5 @@ Header
 Card
 UserAvatar
 DashboardStats
+
+

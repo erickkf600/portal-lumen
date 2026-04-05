@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import '../../public/styles/icomoon.css'
 import './globals.css'
 import { MSWProvider } from '@/components/MSWProvider'
+import Header from '@/app/components/Header'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,8 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased bg-slate-950 text-slate-100 min-h-screen">
-        <MSWProvider>{children}</MSWProvider>
+      <body className="antialiased bg-[#f5f5f5] min-h-screen">
+        <MSWProvider>
+          <Header />
+          {children}
+        </MSWProvider>
       </body>
     </html>
   )
