@@ -5,11 +5,10 @@
   "scripts": {
     "prepare": "husky",
     "dev": "next dev",
-    "server": "json-server --watch db/db.json --port 3001",
-    "dev:full": "concurrently \"npm run dev\" \"npm run server\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "commit": "cz",
@@ -18,7 +17,8 @@
   "dependencies": {
     "next": "16.2.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "swr": "^2.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
@@ -29,7 +29,6 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.27",
     "commitizen": "^4.3.1",
-    "concurrently": "^8.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
@@ -37,7 +36,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
-    "json-server": "^0.17.4",
+    "msw": "^2.12.14",
     "postcss": "^8.5.8",
     "prettier": "^3.8.1",
     "tailwindcss": "^4.2.2",
@@ -47,5 +46,10 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
