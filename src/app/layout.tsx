@@ -3,6 +3,7 @@ import '../../public/styles/icomoon.css'
 import './globals.css'
 import { MSWProvider } from '@/components/MSWProvider'
 import Header from '@/app/components/Header'
+import Footer from '@/app/components/Footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,11 +26,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased bg-[#f5f5f5] min-h-screen">
+    <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-[#f5f5f5] min-h-screen flex flex-col" suppressHydrationWarning>
         <MSWProvider>
           <Header />
-          {children}
+          <main className="flex-grow py-8">
+            <div className="container">{children}</div>
+          </main>
+          <Footer />
         </MSWProvider>
       </body>
     </html>

@@ -3,9 +3,9 @@ import Image from 'next/image'
 type CardNoticiaData = {
   categoria: string
   titulo: string
-  data: string
+  data?: string
   desc: string
-  imagem: string
+  imagem?: string
   alt?: string
 }
 
@@ -15,20 +15,25 @@ type CardProps = {
 
 export default function Card({ noticia }: CardProps) {
   return (
-    <article className="w-full max-w-[557px] overflow-hidden rounded-[14px] bg-white shadow-[0px_4px_16px_rgba(45,52,53,0.12)]">
-      <Image
-        src={noticia.imagem}
-        alt={noticia.alt ?? noticia.titulo}
-        width={557}
-        height={300}
-        className="h-[300px] w-full object-cover object-top"
-      />
+    <article className="group cursor-pointer flex flex-col gap-4">
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+        {noticia.imagem && (
+          <Image
+            src={noticia.imagem}
+            alt={noticia.alt ?? noticia.titulo}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-0" // Opacidade 0 para simular apenas fundo preto conforme pedido
+          />
+        )}
+      </div>
 
-      <div className="space-y-3 px-5 py-5 sm:px-6">
-        <p className="text-sm font-semibold text-lumen-red">{noticia.categoria}</p>
-        <h2 className="text-[2rem] font-semibold leading-tight text-[#111827]">{noticia.titulo}</h2>
-        <p className="text-xs font-semibold text-[#9aa1a8]">{noticia.data}</p>
-        <p className="text-[0.93rem] leading-relaxed text-[#5c6771]">{noticia.desc}</p>
+      <div className="space-y-2">
+        <span className="text-[10px] font-bold uppercase tracking-widest text-lumen-red">{noticia.categoria}</span>
+        <h3 className="text-lg font-bold leading-tight text-[#111] group-hover:text-lumen-red transition-colors line-clamp-2">
+          {noticia.titulo}
+        </h3>
+        {noticia.data && <p className="text-[10px] font-medium text-neutral-400 uppercase">{noticia.data}</p>}
+        <p className="text-sm leading-relaxed text-neutral-500 line-clamp-3">{noticia.desc}</p>
       </div>
     </article>
   )

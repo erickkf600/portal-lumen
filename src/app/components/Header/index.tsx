@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-[#0a0a0a] shadow-[0px_4px_20px_rgba(45,52,53,0.04)]">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 gap-[50px]">
+      <div className="container flex h-16 items-center justify-between gap-[50px]">
         <Link href="/home" className="text-lg font-semibold uppercase tracking-tight text-white sm:text-xl">
           Portal <span className="text-lumen-red">Notícias</span>
         </Link>
@@ -68,7 +68,7 @@ export default function Header() {
       </div>
 
       <nav className="border-t border-neutral-100 bg-neutral-50">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-center gap-3 overflow-x-auto px-4 py-3 sm:gap-8 sm:px-6">
+        <div className="container flex items-center justify-center gap-3 overflow-x-auto py-3 sm:gap-8">
           {CATEGORY_LINKS.map(link => {
             const active = pathname === link.href
 
