@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../../public/styles/icomoon.css'
 import './globals.css'
-import { MSWProvider } from '@/components/MSWProvider'
+import { MSWProvider } from '@/providers/MSWProvider'
 import Header from '@/app/components/Header'
 import Footer from '@/app/components/Footer'
 
