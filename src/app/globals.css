@@ -21,4 +21,16 @@ body {
 
 a {
   text-decoration: none;
-} 
+}
+
+.container {
+  width: 100% !important;
+  max-width: 1240px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+@layer components {
+}

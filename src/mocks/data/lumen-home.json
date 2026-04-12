@@ -1,0 +1,119 @@
+{
+  "destaques": [
+    {
+      "slug": "next-js-15-lancamento",
+      "title": "Next.js 15: novidades e melhorias de performance",
+      "excerpt": "A nova versão do framework React traz melhorias significativas no App Router e suporte a React 19.",
+      "imageUrl": "https://picsum.photos/seed/nextjs/800/400",
+      "imageAlt": "Código e tela de desenvolvimento com Next.js",
+      "category": "Tecnologia",
+      "date": "2025-03-15"
+    },
+    {
+      "slug": "mui-v6-material-ui",
+      "title": "Material UI v6: novo sistema de temas",
+      "excerpt": "A biblioteca de componentes mais usada no ecossistema React anuncia nova major version.",
+      "imageUrl": "https://picsum.photos/seed/materialui/800/400",
+      "imageAlt": "Interface com componentes Material Design",
+      "category": "Tecnologia",
+      "date": "2025-03-14"
+    },
+    {
+      "slug": "acessibilidade-web",
+      "title": "Acessibilidade na web: por que sua aplicação deve ser acessível",
+      "excerpt": "Entenda os critérios WCAG e como implementar boas práticas de a11y no seu projeto.",
+      "imageUrl": "https://picsum.photos/seed/a11y/800/400",
+      "imageAlt": "Símbolo de acessibilidade",
+      "category": "Tecnologia",
+      "date": "2025-03-13"
+    }
+  ],
+
+  "principais": [
+    {
+      "slug": "ia-generativa-empresas",
+      "title": "IA generativa: como empresas estão adotando ChatGPT",
+      "excerpt": "Relatório mostra aumento de produtividade em áreas como suporte e redação.",
+      "imageUrl": "https://picsum.photos/seed/iachat/800/400",
+      "imageAlt": "Tela de chat com assistente virtual",
+      "category": "Tecnologia",
+      "date": "2025-03-11"
+    },
+    {
+      "slug": "politica-reforma-tributaria",
+      "title": "Reforma tributária: entenda o que muda",
+      "excerpt": "Especialistas analisam impacto da nova legislação.",
+      "imageUrl": "https://picsum.photos/seed/tributario/800/400",
+      "imageAlt": "Documentos e gráficos",
+      "category": "Política",
+      "date": "2025-03-16"
+    },
+    {
+      "slug": "libertadores-grupos",
+      "title": "Libertadores: grupos definidos",
+      "excerpt": "Conmebol sorteia chaves para fase inicial.",
+      "imageUrl": "https://picsum.photos/seed/libertadores/800/400",
+      "imageAlt": "Bola e troféu",
+      "category": "Esportes",
+      "date": "2025-03-13"
+    },
+    {
+      "slug": "bolsa-ibovespa-marco",
+      "title": "Ibovespa fecha em alta",
+      "excerpt": "Setor de commodities impulsiona índice.",
+      "imageUrl": "https://picsum.photos/seed/bolsa/800/400",
+      "imageAlt": "Gráfico financeiro",
+      "category": "Money",
+      "date": "2025-03-12"
+    }
+  ],
+
+  "webstories": [
+    {
+      "slug": "meta-instagram-adolescentes",
+      "title": "Meta revela dados sobre adolescentes",
+      "imageUrl": "https://picsum.photos/seed/instagram/600/800",
+      "imageAlt": "Smartphone com rede social"
+    },
+    {
+      "slug": "nasa-lua-missao-adiada",
+      "title": "NASA adia missão para Lua",
+      "imageUrl": "https://picsum.photos/seed/nasa/600/800",
+      "imageAlt": "Foguete lunar"
+    },
+    {
+      "slug": "soja-safra-recorde",
+      "title": "Safra de soja deve bater recorde",
+      "imageUrl": "https://picsum.photos/seed/soja/600/800",
+      "imageAlt": "Plantação de soja"
+    },
+    {
+      "slug": "agro-tecnologia-campo",
+      "title": "Tecnologia no campo cresce",
+      "imageUrl": "https://picsum.photos/seed/agro/600/800",
+      "imageAlt": "Trator moderno"
+    },
+    {
+      "slug": "destinos-brasil-ferias",
+      "title": "Destinos para férias no Brasil",
+      "imageUrl": "https://picsum.photos/seed/viagem/600/800",
+      "imageAlt": "Paisagem brasileira"
+    },
+    {
+      "slug": "africa-separacao-continental",
+      "title": "África se aproxima da separação geológica",
+      "imageUrl": "https://picsum.photos/seed/africa/600/800",
+      "imageAlt": "Formação geológica"
+    }
+  ],
+
+  "reviewSemana": {
+    "slug": "tendencias-moda-estacao",
+    "title": "Review: O que os famosos estão usando",
+    "excerpt": "Confira tendências de moda para a próxima estação.",
+    "imageUrl": "https://picsum.photos/seed/moda/800/400",
+    "imageAlt": "Looks de moda",
+    "category": "Review",
+    "date": "2025-03-10"
+  }
+}
