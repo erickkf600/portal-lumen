@@ -6,9 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-[#a0a0a0] py-8 px-4 md:px-8 border-t border-[#333]">
       <div className="container flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-sm font-medium">
-          &copy; {currentYear} Portal de Notícias. Todos os direitos reservados.
-        </div>
+        <div className="text-sm font-medium">&copy; {currentYear} Portal Lumen. Todos os direitos reservados.</div>
 
         <nav>
           <ul className="flex flex-wrap justify-center gap-6 text-sm font-medium">

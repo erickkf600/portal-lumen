@@ -1,8 +1,8 @@
 export default function ContatosPage() {
   return (
-    <main>
+    <section>
       <h1>Contatos</h1>
       <p>Página de contatos.</p>
-    </main>
+    </section>
   )
 }
