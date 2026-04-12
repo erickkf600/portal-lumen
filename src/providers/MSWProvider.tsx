@@ -1,28 +1,35 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import Skeleton from '@/core/components/Skeleton'
+import { PropsWithChildren, useEffect, useState } from 'react'
 
-export function MSWProvider({ children }: { children: React.ReactNode }) {
-  const [mswReady, setMswReady] = useState(false)
+export function MswProvider({ children }: PropsWithChildren) {
+  const [isMswReady, setIsMswReady] = useState(false)
 
   useEffect(() => {
-    const init = async () => {
-      if (process.env.NODE_ENV === 'development') {
-        const { initMocks } = await import('../mocks')
-        await initMocks()
-        setMswReady(true)
-      } else {
-        setMswReady(true)
-      }
+    if (process.env.NODE_ENV !== 'development') return
+
+    const enableMocking = async () => {
+      const { worker } = await import('@/mocks/browser')
+      await worker.start({
+        onUnhandledRequest: 'bypass',
+      })
+      setIsMswReady(true)
     }
 
-    if (!mswReady) {
-      init()
+    // @ts-expect-error msw not found
+    if (!window.msw) {
+      enableMocking()
+    } else {
+      setIsMswReady(true)
     }
-  }, [mswReady])
+  }, [])
 
-  if (!mswReady && process.env.NODE_ENV === 'development') {
-    return null
+  if (process.env.NODE_ENV !== 'development') return children
+
+  if (!isMswReady) {
+    console.log('loading msw worker...')
+    return <Skeleton feature={1} cards={4} />
   }
 
   return <>{children}</>

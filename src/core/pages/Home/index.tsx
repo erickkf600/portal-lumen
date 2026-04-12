@@ -1,75 +1,41 @@
 import Link from 'next/link'
-import Card from '@/app/components/Card'
+import Image from 'next/image'
+import Card from '@/core/components/Card'
+import { HomeData } from './home.interface'
 
-const PRINCIPAIS_NOTICIAS = [
-  {
-    categoria: 'Inteligência Artificial',
-    titulo: 'Pesquisa da Meta revela avanços em modelos de IA generativa',
-    desc: 'Llama 4 promete revolucionar a forma como interagimos com as redes sociais.',
-  },
-  {
-    categoria: 'Hardware',
-    titulo: 'Novos processadores prometem 40% mais eficiência energética',
-    desc: 'Arquitetura de 2nm chega ao mercado consumidor no próximo semestre.',
-  },
-  {
-    categoria: 'Mercado',
-    titulo: 'Startups brasileiras captam recorde de investimentos em Q3',
-    desc: 'Setor de fintechs lidera o crescimento no cenário nacional.',
-  },
-  {
-    categoria: 'Data Science',
-    titulo: 'O impacto da análise de dados nas decisões governamentais',
-    desc: 'Como políticas públicas estão sendo moldadas por algoritmos preditivos.',
-  },
-]
+interface HomeProps {
+  data: HomeData
+}
 
-const WEBSTORIES = [
-  {
-    titulo: 'iPhone 16: O que esperar do lançamento',
-    imagem: '',
-  },
-  {
-    titulo: 'Carros elétricos: Autonomia é o foco',
-    imagem: '',
-  },
-  {
-    titulo: 'Metaverso: Realidade ou Ficção?',
-    imagem: '',
-  },
-  {
-    titulo: 'Top 10 Frameworks para 2025',
-    imagem: '',
-  },
-  {
-    titulo: 'Podcast: A era da atenção',
-    imagem: '',
-  },
-  {
-    titulo: 'Carreira: Soft Skills em alta',
-    imagem: '',
-  },
-]
+export default function Home({ data }: HomeProps) {
+  const primeiroDestaque = data?.destaques[0]
+  const segundaDestaque = data?.destaques[1]
+  const terceiraDestaque = data?.destaques[2]
 
-export default function Home() {
   return (
     <div className="space-y-16">
       {/* Hero e Lateral */}
       <section className="py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Hero Principal */}
-          <div className="md:col-span-8 bg-black text-white p-8 md:p-12 min-h-[350px] flex flex-col justify-end group cursor-pointer relative overflow-hidden">
-            <div className="relative z-10 space-y-4">
+          <div className="md:col-span-8 relative min-h-[350px] flex flex-col justify-end group cursor-pointer overflow-hidden">
+            <div className="absolute inset-0 bg-black/60 z-10" />
+            <Image
+              src={primeiroDestaque.imageUrl}
+              alt={primeiroDestaque.imageAlt || primeiroDestaque.title}
+              fill
+              sizes="(max-md:100vw) 66vw"
+              className="object-cover z-0"
+              priority
+            />
+            <div className="relative z-20 text-white p-8 md:p-12 space-y-4">
               <span className="inline-block bg-lumen-red text-white text-[10px] md:text-xs font-bold px-2 py-1 uppercase tracking-wider">
-                Tecnologia
+                {primeiroDestaque.category}
               </span>
               <h2 className="text-lg md:text-3xl font-bold leading-tight group-hover:text-lumen-red transition-colors line-clamp-3">
-                Next.js 15: O futuro do <br className="hidden md:block" /> desenvolvimento web agora
+                {primeiroDestaque.title}
               </h2>
-              <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl">
-                A nova versão traz melhorias significativas em performance e experiência do desenvolvedor com suporte a
-                React 19.
-              </p>
+              <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl">{primeiroDestaque.excerpt}</p>
             </div>
           </div>
 
@@ -77,32 +43,28 @@ export default function Home() {
           <div className="md:col-span-4 flex flex-col gap-6">
             {/* Card 1 */}
             <Link
-              href="/noticias/material-ui-v6"
+              href={`/noticias/${segundaDestaque.slug}`}
               className="bg-white p-6 border-l-4 border-lumen-red shadow-sm hover:shadow-md transition-shadow group"
             >
               <span className="text-lumen-red text-[10px] font-bold uppercase tracking-wider mb-2 block">Destaque</span>
               <h3 className="text-xl font-bold text-[#111] mb-2 group-hover:text-lumen-red transition-colors">
-                Material UI v6: Design systems escaláveis
+                {segundaDestaque.title}
               </h3>
-              <p className="text-neutral-500 text-sm">
-                Descubra as novidades na biblioteca de componentes mais popular do ecossistema React.
-              </p>
+              <p className="text-neutral-500 text-sm">{segundaDestaque.excerpt}</p>
             </Link>
 
             {/* Card 2 */}
             <Link
-              href="/noticias/acessibilidade-web-2024"
+              href={`/noticias/${terceiraDestaque.slug}`}
               className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow group"
             >
               <span className="text-lumen-red text-[10px] font-bold uppercase tracking-wider mb-2 block">
-                Acessibilidade
+                {terceiraDestaque.category}
               </span>
               <h3 className="text-xl font-bold text-[#111] mb-2 group-hover:text-lumen-red transition-colors">
-                Acessibilidade na web: Práticas essenciais para 2024
+                {terceiraDestaque.title}
               </h3>
-              <p className="text-neutral-500 text-sm">
-                Como garantir que seu produto digital seja inclusivo para todos os usuários.
-              </p>
+              <p className="text-neutral-500 text-sm">{terceiraDestaque.excerpt}</p>
             </Link>
           </div>
         </div>
@@ -118,8 +80,17 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
-          {PRINCIPAIS_NOTICIAS.map(noticia => (
-            <Card key={noticia.titulo} noticia={noticia} />
+          {data.principais.map(noticia => (
+            <Card
+              key={noticia.slug}
+              noticia={{
+                categoria: noticia.category || '',
+                titulo: noticia.title,
+                desc: noticia.excerpt || '',
+                imagem: noticia.imageUrl,
+                alt: noticia.imageAlt,
+              }}
+            />
           ))}
         </div>
       </section>
@@ -137,15 +108,21 @@ export default function Home() {
           className="no-scrollbar -mx-4 flex snap-x snap-mandatory overflow-x-auto gap-4 pb-4 px-4 scroll-smooth md:mx-0 md:grid md:grid-cols-6 md:px-0 lg:gap-6"
           style={{ scrollPaddingLeft: '1rem', scrollPaddingRight: '1rem' }}
         >
-          {WEBSTORIES.map(story => (
+          {data.webstories.map(story => (
             <div
-              key={story.titulo}
+              key={story.slug}
               className="group relative flex aspect-[9/16] min-w-[160px] cursor-pointer flex-col justify-end overflow-hidden rounded-lg bg-black p-4 snap-start md:min-w-0"
             >
-              <div className="relative z-10">
-                <h4 className="text-xs font-bold leading-tight text-white group-hover:text-lumen-red transition-colors">
-                  {story.titulo}
-                </h4>
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors z-10" />
+              <Image
+                src={story.imageUrl}
+                alt={story.imageAlt || story.title}
+                fill
+                sizes="160px"
+                className="object-cover z-0"
+              />
+              <div className="relative z-20">
+                <h4 className="text-xs font-bold leading-tight text-white">{story.title}</h4>
               </div>
             </div>
           ))}
@@ -163,22 +140,31 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 bg-white shadow-sm overflow-hidden">
           <div className="p-8 md:p-12 space-y-6 flex flex-col justify-center">
-            <span className="text-lumen-red text-xs font-bold uppercase tracking-widest">Review da semana</span>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#111] leading-tight">
-              Review: O que os famosos estão usando para produzir conteúdo
-            </h2>
+            <span className="text-lumen-red text-xs font-bold uppercase tracking-widest">
+              {data.reviewSemana.category}
+            </span>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#111] leading-tight">{data.reviewSemana.title}</h2>
             <p className="text-neutral-500 text-sm md:text-base leading-relaxed max-w-xl">
-              Testamos os equipamentos que se tornaram o novo padrão de ouro para criadores de alto nível.
+              {data.reviewSemana.excerpt}
             </p>
             <Link
-              href="#"
+              href={`/noticias/${data.reviewSemana.slug}`}
               className="inline-block self-start bg-[#5c5c5c] text-white px-6 py-3 text-sm font-bold hover:bg-black transition-colors"
             >
               Leia a análise completa
             </Link>
           </div>
 
-          <div className="bg-black w-full" />
+          <div className="relative bg-black w-full min-h-[300px]">
+            <Image
+              src={data.reviewSemana.imageUrl}
+              alt={data.reviewSemana.imageAlt || data.reviewSemana.title}
+              fill
+              sizes="(max-md:100vw) 50vw"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
     </div>

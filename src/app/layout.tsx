@@ -1,9 +1,9 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../../public/styles/icomoon.css'
 import './globals.css'
-import { MSWProvider } from '@/providers/MSWProvider'
-import Header from '@/app/components/Header'
-import Footer from '@/app/components/Footer'
+import Header from '@/core/components/Header'
+import Footer from '@/core/components/Footer'
+import { MswProvider } from '@/providers/MSWProvider'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -28,13 +28,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-[#f5f5f5] min-h-screen flex flex-col" suppressHydrationWarning>
-        <MSWProvider>
+        <MswProvider>
           <Header />
           <main className="flex-grow py-8">
             <div className="container">{children}</div>
           </main>
           <Footer />
-        </MSWProvider>
+        </MswProvider>
       </body>
     </html>
   )

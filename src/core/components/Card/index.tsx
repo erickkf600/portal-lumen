@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 
 type CardNoticiaData = {
@@ -17,8 +16,6 @@ type CardProps = {
 }
 
 export default function Card({ noticia }: CardProps) {
-  const [isFavorited, setIsFavorited] = useState(false)
-
   return (
     <article className="group cursor-pointer flex flex-col bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
@@ -27,7 +24,9 @@ export default function Card({ noticia }: CardProps) {
             src={noticia.imagem}
             alt={noticia.alt ?? noticia.titulo}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-0"
+            sizes="(max-sm:100vw) (max-lg:50vw) 25vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            quality={75}
           />
         )}
       </div>
@@ -47,20 +46,6 @@ export default function Card({ noticia }: CardProps) {
           <span className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">
             {noticia.data || '12 Mai 2024'}
           </span>
-
-          <button
-            onClick={e => {
-              e.stopPropagation()
-              e.preventDefault()
-              setIsFavorited(!isFavorited)
-            }}
-            className="text-neutral-400 hover:text-lumen-red transition-colors flex items-center justify-center"
-          >
-            <i
-              className={`pi ${isFavorited ? 'pi-bookmark-fill text-lumen-red' : 'pi-bookmark text-xl'}`}
-              style={{ fontSize: '1.2rem' }}
-            />
-          </button>
         </div>
       </div>
     </article>

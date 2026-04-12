@@ -26,6 +26,7 @@ const eslintConfig = defineConfig([
           format: ['PascalCase', 'camelCase'],
         },
       ],
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
   prettier,
