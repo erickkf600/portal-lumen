@@ -1,0 +1,36 @@
+{
+  "titulo": "Perguntas Frequentes",
+  "descricao": "Tire duvidas sobre assinatura, envio de conteudo, conta e suporte do Portal Lumen.",
+  "itens": [
+    {
+      "id": "como-acessar",
+      "pergunta": "Como acesso as noticias exclusivas para assinantes?",
+      "resposta": "Acesse sua conta e procure pelo selo 'Exclusivo'. O conteudo e liberado automaticamente para assinantes com plano ativo."
+    },
+    {
+      "id": "alterar-plano",
+      "pergunta": "Posso alterar meu plano de assinatura a qualquer momento?",
+      "resposta": "Sim. Voce pode fazer upgrade ou downgrade na area de assinatura. A mudanca passa a valer no proximo ciclo de cobranca."
+    },
+    {
+      "id": "cancelamento",
+      "pergunta": "Como faco para cancelar minha assinatura?",
+      "resposta": "No menu do perfil, abra 'Assinatura' e selecione 'Cancelar'. O acesso permanece ativo ate o fim do periodo ja pago."
+    },
+    {
+      "id": "newsletter",
+      "pergunta": "Como recebo as newsletters diarias?",
+      "resposta": "Entre em 'Preferencias de comunicacao' no perfil e habilite as newsletters desejadas. Tambem e possivel escolher os temas."
+    },
+    {
+      "id": "erro-login",
+      "pergunta": "Esqueci minha senha. O que devo fazer?",
+      "resposta": "Na tela de login, clique em 'Esqueci minha senha'. Enviaremos um link para redefinicao no email cadastrado."
+    },
+    {
+      "id": "contato-redacao",
+      "pergunta": "Como envio sugestoes de pauta para a redacao?",
+      "resposta": "Use o formulario da pagina de Contato e selecione o assunto 'Sugestao de pauta'. Nossa equipe avalia todas as mensagens."
+    }
+  ]
+}

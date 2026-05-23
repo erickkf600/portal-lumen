@@ -1,3 +1,5 @@
+import { delay } from 'msw'
+
 type FetchConfig = RequestInit & {
   next?: {
     revalidate?: number
@@ -25,6 +27,8 @@ export async function apiFetch<T>(url: string, config?: FetchConfig): Promise<T>
   if (!res.ok) {
     throw new Error(`Erro na requisição: ${res.status}`)
   }
+
+  await delay(1500)
 
   return res.json()
 }

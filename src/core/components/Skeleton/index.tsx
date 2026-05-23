@@ -16,7 +16,7 @@ export default function Skeleton({ feature, cards, text }: SkeletonProps) {
   if (!feature && !cards && !text) return null
 
   return (
-    <div className="space-y-16 py-8">
+    <div className="container space-y-16 py-8">
       {feature
         ? Array.from({ length: feature }).map((_, i) => (
             <div key={`feature-${i}`} className="grid grid-cols-1 md:grid-cols-12 gap-6">

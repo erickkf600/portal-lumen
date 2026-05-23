@@ -1,0 +1,315 @@
+{
+  "filtros": [
+    {
+      "label": "Todos",
+      "value": "todos"
+    },
+    {
+      "label": "Tecnologia",
+      "value": "tecnologia"
+    },
+    {
+      "label": "Política",
+      "value": "politica"
+    },
+    {
+      "label": "Esportes",
+      "value": "esportes"
+    },
+    {
+      "label": "Money",
+      "value": "money"
+    }
+  ],
+  "noticias": [
+    {
+      "slug": "next-js-15-lancamento",
+      "title": "Next.js 15: novidades e melhorias de performance",
+      "excerpt": "A nova versão do framework React traz melhorias significativas no App Router e suporte a React 19.",
+      "content": "Conteúdo completo da notícia sobre Next.js 15...",
+      "imageUrl": "https://picsum.photos/seed/nextjs/800/400",
+      "imageAlt": "Código e tela de desenvolvimento com Next.js",
+      "category": "Tecnologia",
+      "date": "2025-03-15",
+      "section": "destaque"
+    },
+    {
+      "slug": "mui-v6-material-ui",
+      "title": "Material UI v6: novo sistema de temas",
+      "excerpt": "A biblioteca de componentes mais usada no ecossistema React anuncia nova major version.",
+      "content": "Conteúdo completo da notícia sobre MUI v6...",
+      "imageUrl": "https://picsum.photos/seed/materialui/800/400",
+      "imageAlt": "Interface com componentes Material Design",
+      "category": "Tecnologia",
+      "date": "2025-03-14",
+      "section": "geral"
+    },
+    {
+      "slug": "acessibilidade-web",
+      "title": "Acessibilidade na web: por que sua aplicação deve ser acessível",
+      "excerpt": "Entenda os critérios WCAG e como implementar boas práticas de a11y no seu projeto.",
+      "content": "Conteúdo completo da notícia sobre acessibilidade...",
+      "imageUrl": "https://picsum.photos/seed/a11y/800/400",
+      "imageAlt": "Símbolo de acessibilidade e diversidade de usuários",
+      "category": "Tecnologia",
+      "date": "2025-03-13",
+      "section": "webstory"
+    },
+    {
+      "slug": "meta-instagram-adolescentes",
+      "title": "Pesquisa da Meta: 19% dos adolescentes no Instagram viram conteúdo sensível",
+      "excerpt": "Estudo sobre segurança e conteúdo sensível na plataforma gera debate sobre moderação.",
+      "content": "Conteúdo completo sobre pesquisa Meta...",
+      "imageUrl": "https://picsum.photos/seed/instagram/600/800",
+      "imageAlt": "Smartphone com rede social aberta",
+      "category": "Tecnologia",
+      "date": "2025-03-12",
+      "section": "webstory"
+    },
+    {
+      "slug": "ia-generativa-empresas",
+      "title": "IA generativa: como empresas estão adotando ChatGPT e concorrentes",
+      "excerpt": "Relatório mostra aumento de produtividade em áreas como suporte e redação.",
+      "content": "Conteúdo completo sobre IA nas empresas...",
+      "imageUrl": "https://picsum.photos/seed/iachat/800/400",
+      "imageAlt": "Tela de chat com assistente virtual",
+      "category": "Tecnologia",
+      "date": "2025-03-11",
+      "section": "geral"
+    },
+    {
+      "slug": "politica-reforma-tributaria",
+      "title": "Reforma tributária: entenda o que muda para empresas e consumidores",
+      "excerpt": "Especialistas analisam impacto da nova legislação e prazos de implementação.",
+      "content": "Conteúdo completo sobre reforma tributária...",
+      "imageUrl": "https://picsum.photos/seed/tributario/800/400",
+      "imageAlt": "Documentos e gráficos sobre tributação",
+      "category": "Política",
+      "date": "2025-03-16",
+      "section": "politica"
+    },
+    {
+      "slug": "inss-fraudes-operacao",
+      "title": "Operação contra fraudes no INSS coloca tornozeleira em deputada",
+      "excerpt": "Deputada do Ceará é alvo de operação e usa tornozeleira eletrônica.",
+      "content": "Conteúdo completo da operação INSS...",
+      "imageUrl": "https://picsum.photos/seed/congresso/800/400",
+      "imageAlt": "Plenário do Congresso Nacional",
+      "category": "Política",
+      "date": "2025-03-15",
+      "section": "geral"
+    },
+    {
+      "slug": "votacao-pl-analise",
+      "title": "Câmara analisa projeto que altera regras do Fundo Partidário",
+      "excerpt": "Texto deve ir ao plenário na próxima semana; base do governo articula apoio.",
+      "content": "Conteúdo completo sobre votação...",
+      "imageUrl": "https://picsum.photos/seed/camara/800/400",
+      "imageAlt": "Sessão da Câmara dos Deputados",
+      "category": "Política",
+      "date": "2025-03-14",
+      "section": "geral"
+    },
+    {
+      "slug": "copa-fifa-transferencia-jogos",
+      "title": "Fifa avalia transferir jogos da Copa dos EUA para o México",
+      "excerpt": "Entidade recebe pedidos e analisa logística para sedes alternativas.",
+      "content": "Conteúdo completo sobre Copa e Fifa...",
+      "imageUrl": "https://picsum.photos/seed/futebol/800/400",
+      "imageAlt": "Estádio de futebol lotado",
+      "category": "Esportes",
+      "date": "2025-03-14",
+      "section": "esportes"
+    },
+    {
+      "slug": "libertadores-grupos",
+      "title": "Libertadores: grupos definidos; brasileiros evitam favoritos na fase inicial",
+      "excerpt": "Conmebol sorteia chaves; Flamengo e Palmeiras têm caminhos acessíveis.",
+      "content": "Conteúdo completo sobre Libertadores...",
+      "imageUrl": "https://picsum.photos/seed/libertadores/800/400",
+      "imageAlt": "Bola e troféu da Libertadores",
+      "category": "Esportes",
+      "date": "2025-03-13",
+      "section": "geral"
+    },
+    {
+      "slug": "olimpiadas-paris-preparacao",
+      "title": "Atletas brasileiros iniciam etapa final de preparação para Paris 2024",
+      "excerpt": "Comitê Olímpico anuncia concentração em etapa de altitude na Europa.",
+      "content": "Conteúdo completo sobre Olimpíadas...",
+      "imageUrl": "https://picsum.photos/seed/olimpiadas/800/400",
+      "imageAlt": "Atletas em treino olímpico",
+      "category": "Esportes",
+      "date": "2025-03-12",
+      "section": "geral"
+    },
+    {
+      "slug": "mercado-aneel-enel",
+      "title": "Eventual cassação da Enel não assusta investidores, diz Aneel",
+      "excerpt": "Agência reguladora comenta impacto em contratos e investimentos.",
+      "content": "Conteúdo completo sobre Aneel e Enel...",
+      "imageUrl": "https://picsum.photos/seed/energia/800/400",
+      "imageAlt": "Torres de transmissão de energia",
+      "category": "Money",
+      "date": "2025-03-14",
+      "section": "money"
+    },
+    {
+    "slug": "selic-bcb-decisao",
+    "title": "BC mantém Selic em 10,5% e sinaliza cautela com inflação",
+    "excerpt":
+      "Copom mantém juros; comunicado cita incertezas no cenário externo.",
+    "content": "Conteúdo completo sobre decisão do Copom...",
+    "imageUrl": "https://picsum.photos/seed/selic/800/400",
+    "imageAlt": "Sede do Banco Central",
+    "category": "Money",
+    "date": "2025-03-13",
+    "section": "geral"
+    },
+    {
+      "slug": "bolsa-ibovespa-marco",
+      "title": "Ibovespa fecha em alta com valorização do setor de commodities",
+      "excerpt":
+        "Petrobras e Vale puxam índice; dólar recua após dados do emprego nos EUA.",
+      "content": "Conteúdo completo sobre bolsa...",
+      "imageUrl": "https://picsum.photos/seed/bolsa/800/400",
+      "imageAlt": "Gráfico de índices da bolsa",
+      "category": "Money",
+      "date": "2025-03-12",
+      "section": "geral"
+    },
+    {
+      "slug": "africa-separacao-continental",
+      "title": "Quando você ler esse texto, a África terá se aproximado mais da separação",
+      "excerpt":
+        "Processo geológico que divide o continente avança; entenda o fenômeno.",
+      "content": "Conteúdo completo sobre geologia e África...",
+      "imageUrl": "https://picsum.photos/seed/africa/800/450",
+      "imageAlt": "Paisagem árida e rift no leste africano",
+      "category": "Mundo",
+      "date": "2025-03-16",
+      "section": "destaque"
+    },
+    {
+      "slug": "nasa-lua-missao-adiada",
+      "title": "NASA adia missão tripulada para a Lua novamente: entenda os atrasos",
+      "excerpt":
+        "Agência espacial explica motivos técnicos e novo cronograma.",
+      "content": "Conteúdo completo sobre NASA e Lua...",
+      "imageUrl": "https://picsum.photos/seed/nasa/600/800",
+      "imageAlt": "Foguete e superfície lunar",
+      "category": "Mundo",
+      "date": "2025-03-11",
+      "section": "webstory"
+    },
+    {
+      "slug": "sean-penn-zelensky-foto",
+      "title": "Após faltar ao Oscar e ser premiado, Sean Penn aparece em foto com Zelensky",
+      "excerpt":
+        "Ator e diretor encontram-se em contexto de apoio à Ucrânia.",
+      "content": "Conteúdo completo sobre Sean Penn e Zelensky...",
+      "imageUrl": "https://picsum.photos/seed/ucrania/800/450",
+      "imageAlt": "Encontro entre personalidades em Kiev",
+      "category": "Mundo",
+      "date": "2025-03-15",
+      "section": "destaque"
+    },
+    {
+      "slug": "conflito-oriente-medio",
+      "title": "ONU pede cessar-fogo imediato; tensão segue no Oriente Médio",
+      "excerpt":
+        "Conselho de Segurança debate nova resolução; enviados relatam crise humanitária.",
+      "content": "Conteúdo completo sobre Oriente Médio...",
+      "imageUrl": "https://picsum.photos/seed/onu/800/400",
+      "imageAlt": "Sede da ONU e bandeiras",
+      "category": "Mundo",
+      "date": "2025-03-10",
+      "section": "geral"
+    },
+    {
+      "slug": "soja-safra-recorde",
+      "title": "Safra de soja 2024/25 deve bater recorde, estima Conab",
+      "excerpt":
+        "Produção nacional pode superar 150 milhões de toneladas; clima favorece colheita.",
+      "content": "Conteúdo completo sobre safra de soja...",
+      "imageUrl": "https://picsum.photos/seed/soja/800/400",
+      "imageAlt": "Lavoura de soja em período de colheita",
+      "category": "Agro",
+      "date": "2025-03-15",
+      "section": "geral"
+    },
+    {
+      "slug": "agro-tecnologia-campo",
+      "title": "Tecnologia no campo: drones e sensores ganham espaço na agricultura",
+      "excerpt":
+        "Produtores investem em precisão para reduzir custos e aumentar produtividade.",
+      "content": "Conteúdo completo sobre agrotecnologia...",
+      "imageUrl": "https://picsum.photos/seed/agro/800/400",
+      "imageAlt": "Trator e plantação em área rural",
+      "category": "Agro",
+      "date": "2025-03-14",
+      "section": "geral"
+    },
+    {
+      "slug": "cafe-preco-exportacao",
+      "title": "Preço do café sobe com queda na oferta e demanda aquecida",
+      "excerpt":
+        "Exportadores brasileiros se beneficiam de câmbio e estoques baixos no exterior.",
+      "content": "Conteúdo completo sobre café...",
+      "imageUrl": "https://picsum.photos/seed/cafe/800/400",
+      "imageAlt": "Plantação de café",
+      "category": "Agro",
+      "date": "2025-03-13",
+      "section": "geral"
+    },
+    {
+      "slug": "oscar-dicaprio-vittoria-ceretti",
+      "title": "Quem é Vittoria Ceretti, namorada de DiCaprio que estava no Oscar",
+      "excerpt":
+        "Modelo italiana acompanhou o ator na cerimônia e rouba a cena.",
+      "content": "Conteúdo completo sobre Oscar e celebridades...",
+      "imageUrl": "https://picsum.photos/seed/oscar/800/450",
+      "imageAlt": "Cerimônia do Oscar e tapete vermelho",
+      "category": "Cultura",
+      "date": "2025-03-16",
+      "section": "destaque"
+    },
+    {
+      "slug": "tendencias-moda-estacao",
+      "title": "O que os famosos estão usando? Tendências para a próxima estação",
+      "excerpt":
+        "Confira possíveis tendências de moda a partir dos looks das celebridades.",
+      "content": "Conteúdo completo sobre moda e tendências...",
+      "imageUrl": "https://picsum.photos/seed/moda/400/300",
+      "imageAlt": "Looks e acessórios em desfile",
+      "category": "Cultura",
+      "date": "2025-03-10",
+      "section": "review"
+    },
+    {
+      "slug": "skincare-vitamina-c-niacinamida",
+      "title": "Vitamina C ou Niacinamida: qual o mais adequado para sua rotina?",
+      "excerpt":
+        "Descubra qual ativo combina melhor com seu tipo de pele.",
+      "content": "Conteúdo completo sobre skincare...",
+      "imageUrl": "https://picsum.photos/seed/skincare/400/300",
+      "imageAlt": "Produtos de skincare e rotina facial",
+      "category": "Cultura",
+      "date": "2025-03-09",
+      "section": "review"
+    },
+    {
+      "slug": "destinos-brasil-ferias",
+      "title": "Cinco destinos no Brasil para aproveitar as férias de julho",
+      "excerpt":
+        "De praias a serras: roteiros para todos os gostos e bolsos.",
+      "content": "Conteúdo completo sobre viagem...",
+      "imageUrl": "https://picsum.photos/seed/viagem/800/400",
+      "imageAlt": "Praia e paisagem brasileira",
+      "category": "Cultura",
+      "date": "2025-03-08",
+      "section": "geral"
+    }
+  ]
+}
+      

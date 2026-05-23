@@ -18,7 +18,10 @@ export default function Home({ data }: HomeProps) {
       <section className="py-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Hero Principal */}
-          <div className="md:col-span-8 relative min-h-[350px] flex flex-col justify-end group cursor-pointer overflow-hidden">
+          <Link
+            href={`/noticias/${primeiroDestaque.slug}`}
+            className="md:col-span-8 relative min-h-[350px] flex flex-col justify-end group cursor-pointer overflow-hidden"
+          >
             <div className="absolute inset-0 bg-black/60 z-10" />
             <Image
               src={primeiroDestaque.imageUrl}
@@ -37,7 +40,7 @@ export default function Home({ data }: HomeProps) {
               </h2>
               <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl">{primeiroDestaque.excerpt}</p>
             </div>
-          </div>
+          </Link>
 
           {/* Coluna Lateral */}
           <div className="md:col-span-4 flex flex-col gap-6">
@@ -89,6 +92,7 @@ export default function Home({ data }: HomeProps) {
                 desc: noticia.excerpt || '',
                 imagem: noticia.imageUrl,
                 alt: noticia.imageAlt,
+                href: `/noticias/${noticia.slug}`,
               }}
             />
           ))}
@@ -109,8 +113,9 @@ export default function Home({ data }: HomeProps) {
           style={{ scrollPaddingLeft: '1rem', scrollPaddingRight: '1rem' }}
         >
           {data.webstories.map(story => (
-            <div
+            <Link
               key={story.slug}
+              href={`/noticias/${story.slug}`}
               className="group relative flex aspect-[9/16] min-w-[160px] cursor-pointer flex-col justify-end overflow-hidden rounded-lg bg-black p-4 snap-start md:min-w-0"
             >
               <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition-colors z-10" />
@@ -124,7 +129,7 @@ export default function Home({ data }: HomeProps) {
               <div className="relative z-20">
                 <h4 className="text-xs font-bold leading-tight text-white">{story.title}</h4>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

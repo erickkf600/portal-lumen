@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 type CardNoticiaData = {
   categoria: string
@@ -9,6 +10,7 @@ type CardNoticiaData = {
   desc: string
   imagem?: string
   alt?: string
+  href?: string
 }
 
 type CardProps = {
@@ -16,8 +18,8 @@ type CardProps = {
 }
 
 export default function Card({ noticia }: CardProps) {
-  return (
-    <article className="group cursor-pointer flex flex-col bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
+  const cardContent = (
+    <article className="group flex flex-col bg-white overflow-hidden shadow-sm hover:shadow-md transition-all h-[100%]">
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
         {noticia.imagem && (
           <Image
@@ -50,4 +52,14 @@ export default function Card({ noticia }: CardProps) {
       </div>
     </article>
   )
+
+  if (noticia.href) {
+    return (
+      <Link href={noticia.href} className="block cursor-pointer" aria-label={`Abrir notícia: ${noticia.titulo}`}>
+        {cardContent}
+      </Link>
+    )
+  }
+
+  return cardContent
 }
