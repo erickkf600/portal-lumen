@@ -23,21 +23,26 @@ function formatDate(date: string) {
   return `${String(day).padStart(2, '0')} ${MONTHS[month - 1]} ${year}`
 }
 
-function buildNewsUrl(filter: string, offset: number, limit: number) {
-  const params = new URLSearchParams({
-    filter,
-    offset: String(offset),
-    limit: String(limit),
-  })
-
-  return `http://mock.api/news?${params.toString()}`
-}
-
 export default function Noticias({ data }: NoticiasProps) {
   const [filtroSelecionado, setFiltroSelecionado] = useState(data.filtroAtual || 'todos')
+  const [buscaAtual] = useState(data.buscaAtual || '')
   const [listaNoticias, setListaNoticias] = useState(data.noticias)
   const [hasMore, setHasMore] = useState(data.hasMore)
   const [isLoading, setIsLoading] = useState(false)
+
+  function buildNewsSearchUrl(filter: string, offset: number, limit: number) {
+    const params = new URLSearchParams({
+      filter,
+      offset: String(offset),
+      limit: String(limit),
+    })
+
+    if (buscaAtual.trim()) {
+      params.set('search', buscaAtual.trim())
+    }
+
+    return `http://mock.api/news?${params.toString()}`
+  }
 
   async function handleFiltroChange(filter: string) {
     if (filter === filtroSelecionado || isLoading) {
@@ -47,7 +52,7 @@ export default function Noticias({ data }: NoticiasProps) {
     setIsLoading(true)
 
     try {
-      const response = await apiFetch<NoticiasData>(buildNewsUrl(filter, 0, PAGE_SIZE))
+      const response = await apiFetch<NoticiasData>(buildNewsSearchUrl(filter, 0, PAGE_SIZE))
 
       setFiltroSelecionado(filter)
       setListaNoticias(response.noticias)
@@ -65,7 +70,9 @@ export default function Noticias({ data }: NoticiasProps) {
     setIsLoading(true)
 
     try {
-      const response = await apiFetch<NoticiasData>(buildNewsUrl(filtroSelecionado, listaNoticias.length, PAGE_SIZE))
+      const response = await apiFetch<NoticiasData>(
+        buildNewsSearchUrl(filtroSelecionado, listaNoticias.length, PAGE_SIZE),
+      )
 
       setListaNoticias(current => [...current, ...response.noticias])
       setHasMore(response.hasMore)
@@ -121,6 +128,12 @@ export default function Noticias({ data }: NoticiasProps) {
           />
         ))}
       </div>
+
+      {listaNoticias.length === 0 ? (
+        <div className="rounded-md border border-neutral-200 bg-white p-8 text-center text-neutral-600">
+          Nenhuma noticia encontrada para a busca atual.
+        </div>
+      ) : null}
 
       {hasMore ? (
         <div className="flex justify-center">

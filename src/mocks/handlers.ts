@@ -85,14 +85,20 @@ export const handlers = [
     const url = new URL(request.url)
 
     const filter = (url.searchParams.get('filter') || 'todos').toLowerCase()
+    const search = (url.searchParams.get('search') || '').trim()
     const offset = Math.max(0, Number.parseInt(url.searchParams.get('offset') || '0', 10) || 0)
     const limit = Math.max(1, Number.parseInt(url.searchParams.get('limit') || String(DEFAULT_NEWS_LIMIT), 10) || 1)
 
     const allNoticias = noticias.noticias
-    const noticiasFiltradas =
+    const noticiasPorFiltro =
       filter === 'todos'
         ? allNoticias
         : allNoticias.filter(noticia => normalizeString(noticia.category) === normalizeString(filter))
+
+    const noticiasFiltradas =
+      search.length === 0
+        ? noticiasPorFiltro
+        : noticiasPorFiltro.filter(noticia => normalizeString(noticia.title).includes(normalizeString(search)))
 
     const noticiasPaginadas = noticiasFiltradas.slice(offset, offset + limit)
 
@@ -104,6 +110,7 @@ export const handlers = [
       offset,
       limit,
       filtroAtual: filter,
+      buscaAtual: search,
     })
   }),
 ]

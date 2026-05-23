@@ -22,4 +22,5 @@ export interface NoticiasData {
   offset: number
   limit: number
   filtroAtual: string
+  buscaAtual?: string
 }

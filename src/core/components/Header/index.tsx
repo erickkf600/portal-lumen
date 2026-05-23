@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const MAIN_LINKS = [
   { label: 'Home', href: '/home' },
@@ -21,9 +21,32 @@ const CATEGORY_LINKS = [
 ]
 
 export default function Header() {
+  const router = useRouter()
   const pathname = usePathname()
+  const searchParams = useSearchParams()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isNoticiasPage = pathname?.startsWith('/noticias')
+
+  const searchAtual = isNoticiasPage ? searchParams.get('search') || '' : ''
+
+  function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const formData = new FormData(event.currentTarget)
+    const rawSearch = formData.get('search')
+    const typedSearch = typeof rawSearch === 'string' ? rawSearch : ''
+
+    const term = typedSearch.trim()
+
+    if (term.length === 0) {
+      router.push('/noticias')
+    } else {
+      const params = new URLSearchParams({ search: term })
+      router.push(`/noticias?${params.toString()}`)
+    }
+
+    setIsMenuOpen(false)
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-[#0a0a0a] shadow-[0px_4px_20px_rgba(45,52,53,0.04)]">
@@ -69,14 +92,16 @@ export default function Header() {
         {/* Lado Direito: Search e User */}
         <div className="flex items-center gap-4">
           {/* Search Input (Desktop) */}
-          <div className="relative hidden md:block">
+          <form className="relative hidden md:block" onSubmit={handleSearchSubmit}>
             <i className="icon-search absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400 text-sm" />
             <input
+              name="search"
               type="text"
-              placeholder="Buscar..."
+              defaultValue={searchAtual}
+              placeholder="Buscar noticia..."
               className="w-[200px] rounded-lg bg-[#333232] py-2 pl-10 pr-4 text-sm text-white focus:outline-none focus:ring-1 focus:ring-lumen-red lg:w-[280px]"
             />
-          </div>
+          </form>
 
           <Link
             href="/meu-perfil"
@@ -118,14 +143,16 @@ export default function Header() {
         <div className="fixed inset-0 top-16 z-[100] bg-black p-6 md:hidden">
           <div className="flex flex-col gap-8">
             {/* Search Input (Mobile) */}
-            <div className="relative">
+            <form className="relative" onSubmit={handleSearchSubmit}>
               <i className="icon-search absolute left-4 top-1/2 -translate-y-1/2 text-neutral-400" />
               <input
+                name="search"
                 type="text"
-                placeholder="Buscar..."
+                defaultValue={searchAtual}
+                placeholder="Buscar noticia..."
                 className="w-full rounded-lg bg-[#1a1a1a] py-3 pl-12 pr-4 text-white focus:outline-none"
               />
-            </div>
+            </form>
 
             {/* Links Mobile */}
             <nav className="flex flex-col gap-6">
