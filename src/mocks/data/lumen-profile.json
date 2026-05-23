@@ -1,0 +1,28 @@
+{
+  "saved": [
+    {
+      "id": "saved-01",
+      "categoria": "Economia",
+      "titulo": "O impacto das novas taxas no mercado digital brasileiro",
+      "imagem": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a"
+    },
+    {
+      "id": "saved-02",
+      "categoria": "Tech",
+      "titulo": "IA Generativa: como a curadoria digital esta evoluindo",
+      "imagem": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3"
+    },
+    {
+      "id": "saved-03",
+      "categoria": "Politica",
+      "titulo": "Reformas estruturais prometem novos rumos para 2026",
+      "imagem": "https://images.unsplash.com/photo-1517048676732-d65bc937f952"
+    },
+    {
+      "id": "saved-04",
+      "categoria": "Cultura",
+      "titulo": "Premiacoes nacionais colocam jornalismo investigativo em destaque",
+      "imagem": "https://images.unsplash.com/photo-1499750310107-5fef28a66643"
+    }
+  ]
+}

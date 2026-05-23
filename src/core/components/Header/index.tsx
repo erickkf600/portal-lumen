@@ -78,13 +78,15 @@ export default function Header() {
             />
           </div>
 
-          <button
-            type="button"
+          <Link
+            href="/meu-perfil"
             aria-label="Perfil"
-            className="p-2 text-white transition-colors hover:text-lumen-red cursor-pointer"
+            className={`cursor-pointer p-2 transition-colors ${
+              pathname === '/meu-perfil' ? 'text-lumen-red' : 'text-white hover:text-lumen-red'
+            }`}
           >
             <i className="icon-user text-lg md:text-md" />
-          </button>
+          </Link>
         </div>
       </div>
 
