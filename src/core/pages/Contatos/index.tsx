@@ -41,9 +41,18 @@ export default function Contatos() {
 
   const validateField = async (field: keyof ContactFormValues, value: string) => {
     const nextValues = { ...values, [field]: value }
+    const zodResult = zodSchema.safeParse(nextValues)
 
     try {
-      zodSchema.pick({ [field]: true }).parse({ [field]: value })
+      if (!zodResult.success) {
+        const fieldIssue = zodResult.error.issues.find(issue => issue.path[0] === field)
+
+        if (fieldIssue) {
+          setErrors(prev => ({ ...prev, [field]: fieldIssue.message }))
+          return
+        }
+      }
+
       await yupSchema.validateAt(field, nextValues)
 
       setErrors(prev => {

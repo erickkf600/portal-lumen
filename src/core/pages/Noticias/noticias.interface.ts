@@ -7,6 +7,7 @@ export interface NoticiaItem {
   slug: string
   title: string
   excerpt: string
+  content: string
   imageUrl: string
   imageAlt: string
   category: string

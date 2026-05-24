@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google'
+import { Suspense } from 'react'
 import '../../public/styles/icomoon.css'
 import './globals.css'
 import Header from '@/core/components/Header'
@@ -29,7 +30,9 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${geistSans.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="antialiased bg-[#f5f5f5] min-h-screen flex flex-col" suppressHydrationWarning>
         <MswProvider>
-          <Header />
+          <Suspense fallback={<div className="h-16 border-b border-neutral-200 bg-[#0a0a0a]" />}>
+            <Header />
+          </Suspense>
           <main className="flex-grow py-8">
             <div className="container">{children}</div>
           </main>

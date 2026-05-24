@@ -21,18 +21,20 @@ type ProfileResponse = {
 export default function MeuPerfil() {
   const router = useRouter()
   const { user, isAuthenticated, updateUser, logout } = useAuthStore(state => state)
-  const [isHydrated, setIsHydrated] = useState(useAuthStore.persist.hasHydrated())
+  const [isHydrated, setIsHydrated] = useState(false)
   const [isEditing, setIsEditing] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
   const [feedback, setFeedback] = useState('')
   const [formValues, setFormValues] = useState({ nomeCompleto: '', email: '', senha: '' })
 
   useEffect(() => {
-    const unsubscribe = useAuthStore.persist.onFinishHydration(() => {
+    const frame = window.requestAnimationFrame(() => {
       setIsHydrated(true)
     })
 
-    return unsubscribe
+    return () => {
+      window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   if (!isHydrated) {
